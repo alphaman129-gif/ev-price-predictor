@@ -6,7 +6,7 @@ A Machine Learning web app that predicts the **market price of electric vehicles
 
 ## 🚀 Live Demo
 
-👉 [Click here to try the app](https://yourname-ev-price-predictor.streamlit.app)
+👉 [Click here to try the app](https://ev-price-predictor-qkvlpvlhfzcgg4kt5x3pvn.streamlit.app/)
 
 ---
 
@@ -106,7 +106,7 @@ streamlit run app.py
 
 ## 👨‍💻 Author
 
-**M Faisal** *(your name here)*
+**M Faisal**
 - 🌐 GitHub: [@alphaman129-gif](https://alphaman129-gif)
 
 ---
