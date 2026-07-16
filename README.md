@@ -106,9 +106,8 @@ streamlit run app.py
 
 ## 👨‍💻 Author
 
-**Cole Ryan** *(your name here)*
-- 🌐 GitHub: [@yourusername](https://github.com/yourusername)
-- 💼 LinkedIn: [your LinkedIn](https://linkedin.com)
+**M Faisal** *(your name here)*
+- 🌐 GitHub: [@alphaman129-gif](https://alphaman129-gif)
 
 ---
 
