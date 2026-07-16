@@ -107,7 +107,7 @@ streamlit run app.py
 ## 👨‍💻 Author
 
 **M Faisal**
-- 🌐 GitHub: [@alphaman129-gif](https://alphaman129-gif)
+- 🌐 GitHub: [@alphaman129-gif](https://github.com/alphaman129-gif)
 
 ---
 
