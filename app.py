@@ -139,9 +139,9 @@ st.markdown('<div class="section-label">🔋 Battery & Range</div>', unsafe_allo
 st.markdown('<div class="card">', unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 with col1:
-    battery_capacity_kwh = st.slider("Battery Capacity (kWh)", 20, 200, 75)
+    battery_capacity_kwh = st.slider("Battery Capacity (kWh)", 40, 120, 75)
 with col2:
-    range_miles = st.slider("Range (Miles)", 50, 600, 300)
+    range_miles = st.slider("Range (Miles)", 150, 450, 300)
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ── Performance ───────────────────────────────────────────────
@@ -149,30 +149,38 @@ st.markdown('<div class="section-label">⚡ Performance</div>', unsafe_allow_htm
 st.markdown('<div class="card">', unsafe_allow_html=True)
 col3, col4, col5 = st.columns(3)
 with col3:
-    horsepower = st.slider("Horsepower (HP)", 100, 1200, 400)
+    horsepower = st.slider("Horsepower (HP)", 150, 1000, 400)
 with col4:
-    charging_speed_kw = st.slider("Charging Speed (kW)", 10, 350, 150)
+    charging_speed_kw = st.slider("Charging Speed (kW)", 50, 350, 150)
 with col5:
-    acceleration_0_60_mph = st.slider("0-60 mph (sec)", 1.0, 15.0, 4.5, step=0.1)
+    acceleration_0_60_mph = st.slider("0-60 mph (sec)", 2.0, 8.0, 4.5, step=0.1)
 st.markdown('</div>', unsafe_allow_html=True)
 
-# ── Ratings ───────────────────────────────────────────────────
-st.markdown('<div class="section-label">⭐ Ratings & Warranty</div>', unsafe_allow_html=True)
+# ── Ratings & Autopilot ───────────────────────────────────────
+st.markdown('<div class="section-label">⭐ Ratings, Autopilot & Warranty</div>', unsafe_allow_html=True)
 st.markdown('<div class="card">', unsafe_allow_html=True)
-col6, col7, col8 = st.columns(3)
+col6, col7, col8, col9 = st.columns(4)
 with col6:
-    safety_rating = st.slider("Safety Rating (1-5)", 1.0, 5.0, 4.5, step=0.1)
+    safety_rating = st.slider("Safety Rating (3-5)", 3.0, 5.0, 4.5, step=0.1)
 with col7:
-    customer_rating = st.slider("Customer Rating (1-5)", 1.0, 5.0, 4.2, step=0.1)
+    customer_rating = st.slider("Customer Rating (3-5)", 3.0, 5.0, 4.2, step=0.1)
 with col8:
-    warranty_years = st.slider("Warranty (Years)", 1, 15, 8)
+    autopilot_level = st.slider("Autopilot Level (0-5)", 0, 5, 2)
+with col9:
+    warranty_years = st.slider("Warranty (Years)", 3, 8, 5)
 st.markdown('</div>', unsafe_allow_html=True)
 
 # ── Predict ───────────────────────────────────────────────────
 if st.button("⚡ Predict EV Price"):
-    features = np.array([[battery_capacity_kwh, range_miles, horsepower,
-                          charging_speed_kw, acceleration_0_60_mph,
-                          safety_rating, customer_rating, warranty_years]])
+    features = np.array([[battery_capacity_kwh,
+                          range_miles,
+                          charging_speed_kw,
+                          horsepower,
+                          acceleration_0_60_mph,
+                          safety_rating,
+                          customer_rating,
+                          autopilot_level,
+                          warranty_years]])
     predicted = model.predict(features)[0]
 
     if predicted >= 80000:
